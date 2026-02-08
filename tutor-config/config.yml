@@ -1,0 +1,110 @@
+CMS_HOST: studio.alrafi.com
+CMS_OAUTH2_SECRET: "removedforsecurity"
+CONTACT_EMAIL: contact@alrafi.com
+ELASTICSEARCH_AUTH_PASSWORD: Openedx1!
+ELASTICSEARCH_AUTH_USER: "removedforsecurity"
+ELASTICSEARCH_HOST: vpc-openedx-search-dsnbdqwlmc2ctk5sdjlruh7b5a.us-east-2.es.amazonaws.com
+ELASTICSEARCH_PORT: 443
+ELASTICSEARCH_SCHEME: https
+ENABLE_HTTPS: true
+ENABLE_WEB_PROXY: false
+ID: n8zd3t82RWNACZlU6ibsmxqF
+JWT_RSA_PRIVATE_KEY: '-----BEGIN RSA PRIVATE KEY-----
+
+  MIIEogIBAAKCAQEA1XInaU2tPYQqbiVlZGkS53fMToBbFtAKkP+jaAJQAcsGXZFH
+
+  E8+zZzTpthLUokem+9g3aYRBzKnpIvvLkr/MsRKZ8b6Teo+0NYIQWJ9OfXM/odbH
+
+  T8C2KlFEqrwodH2Xk9f5daqa0hKrQaOBqTOAlTg3j8hYZM9ZvtClrOZHGLPhcC2p
+
+  Jw+uKPVBY36mcYsahneoBI61FyhTIhumA6RHBc17JXD2HsM0f0StpWSS/tnb+mw6
+
+  wfkYbXks0Ybex1KguyASnttLeV8urNy8hjtyWJaZ58G8tXUDjA2Uc2PopZw5w3qM
+
+  0gVCqy9LcmiK2MQMKreHGntJ46QhiYq7YMOOaQIDAQABAoIBABV0tYs/co0S4HCE
+
+  zBPLP6oap+QSwUVSaaOAfRC3HcuGWPgWItjWGbzDzAQAUdVTwlCB4DUYRUSBZnT8
+
+  rm6sntMEcYrkWz8YW7c+wS2lau6Po5t9Q3kMAEvR8kb+5cqq9s4W6WXHfetk0sgE
+
+  +4NSkOf/GA+5JhCRKt50axkNp2MvP6o6aU6ZMemthZ3z1nUHNqmciPIYe5YPv248
+
+  YjDPMsi/qriFsUZruPDI4yj4sSmFnWdyuufdMEFQno3W0nPwQt7l9ZBwy4NaegsW
+
+  DdWnP0rzSsmT8f1egoyHi2naYJynKZmAzSIRKyXsOLBiT12PqnEhuzAQvvdUXK3U
+
+  TqlAi/ECgYEA1hCHfKYKSb7nOLFYHKhSvASTa09E08QYFGBPnStUDx6EckS6NQba
+
+  eZmA8jAMlXWygzjfuFP59kQP6Gjpcef4z55Lap04OAf9OIrxq6lEJZBbxtwnmTZ1
+
+  rb6x74ovM3Y/AcMKFIya5dd+Csh/61q87V1wTEjYAW+CEjWnmkoHDfECgYEA/0KZ
+
+  TiGmj4Tdimx3yWig/Ehmu+sqNme1g5AWsh4/8UJlyXACxBnACkMvIHlCegDeS02u
+
+  DPvM1dAZGc0TaPxyt+4ziZkZ8YIVNC72Ie5P+Hd42V/taVQbQ3p/JjHivYdjnueC
+
+  lmbkBwgl03hMzV7j/wwRbmcbk1UgCzEC9dET7/kCgYAyJP0X/e07CTUw2ppBXEzF
+
+  Lm06Hf+Je84IN+ducc/nGsb73Y2hDlHvWj4SfZ71A/UlOBVwIHvVbGwtjSXiQOzP
+
+  9czE1L9uoLB4plOmWqhUBFT7aGb+RPucD6eu7TfRXkm0J/QcjDNc0/X6oK0WfNL0
+
+  54Z+2DGBZJWbnmX8horQgQKBgGhZKmCVQwiykPowYzuTqRPY6R5zARuig8JXmd+Q
+
+  nCUdNo0FXCwcNrQ7SL2mtHU5e6YfCELIgLD7U/eHLSMi6CammqzqSH/A5LgjZnzy
+
+  dgClnmKGY4BGYKrSHb5YcE94VFI2Y9zmDNuPCh+LsyHVY7D0lv+h6NTu3J2WmJYy
+
+  tUrJAoGAYmRJiBTwjLgA9x/rZ5YSAdkJmUTXwrqqCTNY8YPq2IbLkOVqzwWN61V2
+
+  B5Q79dkaIeUkZrzq0MqpAVpcOEnB8EZq/iE6qYLk59ChkCQGAAxjBWRTAo5od0lg
+
+  KxFwC09F9GKIqSNJ01xMv4pGPUKbL3tvd0M2OcgTYWO3DlPBtVA=
+
+  -----END RSA PRIVATE KEY-----'
+K8S_CMS_CPU_REQUEST: 300m
+K8S_CMS_MEMORY_REQUEST: 1Gi
+K8S_CMS_RESOURCES:
+  limits:
+    memory: 2Gi
+  requests:
+    cpu: 300m
+    memory: 1Gi
+K8S_LMS_CPU_REQUEST: 500m
+K8S_LMS_MEMORY_REQUEST: 2Gi
+K8S_LMS_RESOURCES:
+  limits:
+    memory: 4Gi
+  requests:
+    cpu: 500m
+    memory: 2Gi
+K8S_WORKER_CPU_REQUEST: 300m
+LANGUAGE_CODE: en
+LMS_HOST: lms.alrafi.com
+MEILISEARCH_API_KEY: 69217e2fb993650a8c4dc43876a19d6f6f42c5e6ceaba7899004fc7aaff312
+MEILISEARCH_API_KEY_UID: 13728497-ce9d-4a1a-89d3-99095cd239a6
+MEILISEARCH_MASTER_KEY: O6iDwGV5tiy5QaprBvr6795OLL6UU
+MONGODB_HOST: openedx-mongo.cluster-czeggmy8a2oc.us-east-2.docdb.amazonaws.com
+MONGODB_PASSWORD: "removedforsecurity"
+MONGODB_PORT: 27017
+MONGODB_USERNAME: openedx
+MYSQL_HOST: openedx.czeggmy8a2oc.us-east-2.rds.amazonaws.com
+MYSQL_ROOT_PASSWORD: "removedforsecurity"
+MYSQL_ROOT_USERNAME: admin
+OPENEDX_MYSQL_DATABASE: openedx
+OPENEDX_MYSQL_PASSWORD: "removedforsecurity"
+OPENEDX_MYSQL_USERNAME: admin
+OPENEDX_SECRET_KEY: "removedforsecurity"
+PLATFORM_NAME: AL-Rafi
+PLUGINS:
+- mfe
+- indigo
+PLUGIN_INDEXES:
+- https://overhang.io/tutor/main
+- https://overhang.io/tutor/contrib
+REDIS_HOST: openedx-redis.mqtg7r.ng.0001.use2.cache.amazonaws.com
+REDIS_PORT: 6379
+RUN_ELASTICSEARCH: false
+RUN_MONGODB: false
+RUN_MYSQL: false
+RUN_REDIS: false
