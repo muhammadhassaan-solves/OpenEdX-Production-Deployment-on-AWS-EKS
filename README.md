@@ -1,12 +1,13 @@
+<h1>OpenEdX Deployment on Kubernetes (AWS EKS) </h1>
 <h2>Description</h2>
-This repository contains the implementation and deployment artifacts for running Open edX in a production-grade AWS EKS environment. The deployment is built using Tutor (latest stable), while meeting enterprise requirements around security, scalability, observability, externalized data services, and operational discipline.
+This repository contains the implementation and deployment artifacts for running Open edX in a production-grade AWS EKS environment. The deployment is done using Tutor (latest stable), while meeting enterprise requirements around security, scalability, observability, externalized data services, and operational discipline.
 
 <h2>Architecture diagram</h2>
 <img src="https://i.postimg.cc/15NtHq2m/image.png"/>
 
 <h2>AWS VPC Architecture & Network Flow Diagram</h2>
 <img src="https://i.postimg.cc/9fN0bYm0/image.png"/>
-<h2>Step-by-step deployment guide</h2>
+<h2>Proof of Implementation & Step-by-step deployment guide</h2>
 
 <p align="center">
 1. Launch Amazon EKS Cluster with Infrastructure as Code (Terraform)<br />
@@ -53,11 +54,15 @@ This repository contains the implementation and deployment artifacts for running
 <img src="https://i.postimg.cc/d10LFS1T/image.png" />
 <br />
 <br />
-11. Configure Persistent Volumes (PV/PVC) using Amazon EFS for uploads and media
+11. Configure and Load test Horizontal Pod Autoscaler (HPA) for LMS and CMS 
+<img src="https://i.postimg.cc/TPHFSPH8/image.png" />
+<br />
+<br /> 
+12. Configure Persistent Volumes (PV/PVC) using Amazon EFS for uploads and media
 <img src="https://i.postimg.cc/VkdwYQBy/image.png" />
 <br />
 <br />
-12. Deploy Prometheus + Grafana Monitoring Stack (kube-prometheus-stack) for Observability & Alerting
+13. Deploy Prometheus + Grafana Monitoring Stack (kube-prometheus-stack) for Observability & Alerting
 <img src="https://i.postimg.cc/wBwDDNRz/image.png" />
 <br />
 <br />
