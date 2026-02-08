@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-proxy-ingress-nginx-controller
+  namespace: openedx
+data:
+  allow-snippet-annotations: "true"
+  use-http2: "true"
+  use-forwarded-headers: "true"
+  compute-full-forwarded-for: "true"
+  use-proxy-protocol: "false"
+  ssl-protocols: "TLSv1.2 TLSv1.3"
+  ssl-prefer-server-ciphers: "true"
+  proxy-body-size: "250m"
+  proxy-read-timeout: "300"
+  proxy-send-timeout: "300"
+  proxy-connect-timeout: "60"
+  use-gzip: "true"
