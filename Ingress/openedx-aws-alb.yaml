@@ -1,0 +1,56 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: openedx-aws-alb
+  namespace: openedx
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: instance
+
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-2:266735809739:certificate/7c36cd4a-9619-482e-8b09-bae73208d51c,arn:aws:acm:us-east-2:266735809739:certificate/9bd6b6c9-3432-490d-9d1b-458cf606b5df
+
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80},{"HTTPS":443}]'
+    alb.ingress.kubernetes.io/ssl-redirect: "443"
+
+    alb.ingress.kubernetes.io/backend-protocol: HTTPS
+
+    alb.ingress.kubernetes.io/healthcheck-protocol: HTTPS
+    alb.ingress.kubernetes.io/healthcheck-port: "traffic-port"
+    alb.ingress.kubernetes.io/healthcheck-path: /healthz
+    alb.ingress.kubernetes.io/success-codes: "200-399"
+
+spec:
+  ingressClassName: alb
+  rules:
+    - host: lms.alrafi.org
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nginx-proxy-ingress-nginx-controller
+                port:
+                  number: 443
+
+    - host: studio.alrafi.org
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nginx-proxy-ingress-nginx-controller
+                port:
+                  number: 443
+
+    - host: apps.lms.alrafi.org
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nginx-proxy-ingress-nginx-controller
+                port:
+                  number: 443
