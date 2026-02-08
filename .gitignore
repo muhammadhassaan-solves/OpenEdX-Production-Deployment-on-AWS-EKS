@@ -1,0 +1,24 @@
+# Terraform directories
+.terraform/
+
+# Terraform state files
+*.tfstate
+*.tfstate.backup
+
+# Crash log
+crash.log
+
+# Override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# CLI configuration files
+.terraformrc
+terraform.rc
+
+# Ignore all YAML except the ones we explicitly track
+values/*.yaml
+!values/argocd.yaml
+!values/metrics-server.yaml

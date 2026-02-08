@@ -1,0 +1,18 @@
+locals {
+  env = "Production"
+  region = "us-east-2"
+  zone1 = "us-east-2a"
+  zone2 = "us-east-2b"
+  zone3 = "us-east-2c"
+  vpc_cidr_block = "12.0.0.0/16"
+  private_subnet_cidr_1 = "12.0.0.0/19"
+  private_subnet_cidr_2 = "12.0.32.0/19"
+  private_subnet_cidr_3 = "12.0.64.0/19"
+  public_subnet_cidr_1 = "12.0.96.0/19"
+  public_subnet_cidr_2 = "12.0.128.0/19"
+  public_subnet_cidr_3 = "12.0.160.0/19"
+  eks_name = "Open-edX"
+  eks_version = "1.35"
+  purchase_option = "ON_DEMAND"
+  instances_type = "t3.large"
+}
