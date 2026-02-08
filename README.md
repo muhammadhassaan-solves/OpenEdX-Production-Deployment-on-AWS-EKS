@@ -46,11 +46,11 @@ This repository contains the implementation and deployment artifacts for running
 <img src="https://i.postimg.cc/zf2qCDzY/image.png" />
 <br />
 <br />
-9. Configure Cloudfront with Rate Limiting and DDoS protection <br/>
+9. Configure AWS Cloudfront (CDN) with AWS WAF Integration (Including Rate Limiting and DDoS protection) <br/>
 <img src="https://i.postimg.cc/ryQN5vW9/cloud.png" />
 <br />
 <br />
-10. Enable AWS WAF (Web Application Firewall) with required managed rules
+10. Add more required managed rules on AWS WAF (Web Application Firewall)
 <img src="https://i.postimg.cc/d10LFS1T/image.png" />
 <br />
 <br />
