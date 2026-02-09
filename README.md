@@ -66,3 +66,7 @@ This repository contains the implementation and deployment artifacts for running
 <img src="https://i.postimg.cc/wBwDDNRz/image.png" />
 <br />
 <br />
+
+Live Deployment URLs
+- LMS (Student Portal): https://lms.alrafi.org  
+- CMS / Studio (Course Authoring): https://studio.alrafi.org
