@@ -1,5 +1,6 @@
 Key Open edX Production Issues and Resolutions
 
+
 1. DocumentDB Retryable Writes Issue
 
 Problem:
