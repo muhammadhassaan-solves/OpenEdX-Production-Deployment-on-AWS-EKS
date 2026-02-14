@@ -340,6 +340,16 @@ kubectl patch deployment cms -n openedx --type='json' -p='[
 
 echo "LMS and CMS deployments patched with PVCs"
 
+# 9. Update security context for LMS & CMS
+echo "9. Updating security context for LMS and CMS..."
+# LMS
+kubectl patch deployment lms -n openedx --patch '{"spec": {"template": {"spec": {"securityContext": {"fsGroup": 1000}}}}}'
+
+# CMS
+kubectl patch deployment cms -n openedx --patch '{"spec": {"template": {"spec": {"securityContext": {"fsGroup": 1000}}}}}'
+
+echo "LMS and CMS deployments patched with PVCs and security context"
+
 echo ""
 echo "=========================================="
 echo "All customizations applied!"
