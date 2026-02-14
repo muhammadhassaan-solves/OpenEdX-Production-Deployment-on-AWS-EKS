@@ -257,14 +257,97 @@ spec:
 EOF
 echo "Cluster Issuer applied"
 
+# 7. Persistent Volume Claims
+echo "7. Creating LMS and CMS storage PVCs..."
+cat > ~/openedx-storage.yaml << 'EOF'
+# LMS Media Storage
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: lms-media
+  namespace: openedx
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: gp2
+  resources:
+    requests:
+      storage: 10Gi
+---
+# CMS Media Storage
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: cms-media
+  namespace: openedx
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: gp2
+  resources:
+    requests:
+      storage: 10Gi
+EOF
+
+kubectl apply -f ~/openedx-storage.yaml
+echo "PVCs applied"
+
+# 8. Patch LMS and CMS Deployments with volumes
+echo "8. Patching LMS and CMS deployments to mount PVCs..."
+# Patch LMS
+kubectl patch deployment lms -n openedx --type='json' -p='[
+  {
+    "op": "add",
+    "path": "/spec/template/spec/volumes/-",
+    "value": {
+      "name": "lms-media",
+      "persistentVolumeClaim": {
+        "claimName": "lms-media"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "path": "/spec/template/spec/containers/0/volumeMounts/-",
+    "value": {
+      "name": "lms-media",
+      "mountPath": "/openedx/media"
+    }
+  }
+]'
+
+# Patch CMS
+kubectl patch deployment cms -n openedx --type='json' -p='[
+  {
+    "op": "add",
+    "path": "/spec/template/spec/volumes/-",
+    "value": {
+      "name": "cms-media",
+      "persistentVolumeClaim": {
+        "claimName": "cms-media"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "path": "/spec/template/spec/containers/0/volumeMounts/-",
+    "value": {
+      "name": "cms-media",
+      "mountPath": "/openedx/media"
+    }
+  }
+]'
+
+echo "LMS and CMS deployments patched with PVCs"
+
 echo ""
 echo "=========================================="
 echo "All customizations applied!"
 echo "=========================================="
 echo ""
 echo "Status:"
+kubectl get pvc -n openedx
 kubectl get hpa -n openedx
-echo ""
 kubectl get ingress -n openedx
-echo ""
+kubectl get pods -n openedx
 kubectl get certificate -n openedx
