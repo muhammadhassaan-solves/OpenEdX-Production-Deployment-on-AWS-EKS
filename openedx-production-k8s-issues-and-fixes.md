@@ -1,7 +1,7 @@
 Key Open edX Production Issues and Resolutions
 
 
-1. DocumentDB Retryable Writes Issue
+-----> DocumentDB Retryable Writes Issue
 
 Problem:
 Open edX deployments on Kubernetes using Amazon DocumentDB were failing all MongoDB write operations. The errors appeared as:
@@ -24,7 +24,8 @@ Course creation and publishing functionality was restored.
 The production environment became stable for LMS and CMS operations.
 
 
-2. CloudFront and WAF Blocking MFE File Uploads
+
+-----> CloudFront and WAF Blocking MFE File Uploads
 
 Problem:
 File uploads in Open edX Micro-Frontend (MFE) were failing with CORS errors and 403 Forbidden responses.
