@@ -1,6 +1,16 @@
-kubectl create namespace monitoring
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-helm repo add grafana https://grafana.github.io/helm-charts
-kubectl get pods -n monitoring
-kubectl get secret -n monitoring kube-prom-stack-grafana \
-  -o jsonpath="{.data.admin-password}" | base64 --decode
+helm install monitoring prometheus-community/kube-prometheus-stack
+--namespace monitoring
+--set grafana.adminPassword='AlRafi@Monitor2026'
+--set grafana.persistence.enabled=true
+--set grafana.persistence.storageClassName=gp2
+--set grafana.persistence.size=5Gi
+--set prometheus.prometheusSpec.retention=15d
+--set prometheus.prometheusSpec.storageSpec.volumeClaimTemplate.spec.storageClassName=gp2
+--set prometheus.prometheusSpec.storageSpec.volumeClaimTemplate.spec.resources.requests.storage=5Gi
+--set alertmanager.alertmanagerSpec.storage.volumeClaimTemplate.spec.storageClassName=gp2
+--set alertmanager.alertmanagerSpec.storage.volumeClaimTemplate.spec.resources.requests.storage=5Gi
+--set kubeControllerManager.enabled=false
+--set kubeScheduler.enabled=false
+--set kubeProxy.enabled=false
+--set kubeEtcd.enabled=false
+--wait --timeout 10m
