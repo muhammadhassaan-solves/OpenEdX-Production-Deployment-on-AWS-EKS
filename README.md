@@ -3,10 +3,10 @@
 This repository contains the implementation and deployment artifacts for running Open edX in a production-grade AWS EKS environment. The deployment is done using Tutor (latest stable), while meeting enterprise requirements around security, scalability, observability, externalized data services, and operational discipline.
 
 <h2>Architecture diagram</h2>
-<img src="https://i.postimg.cc/15NtHq2m/image.png"/>
+<img src="https://i.postimg.cc/4xBCV37T/image.png"/>
 
 <h2>AWS VPC Architecture & Network Flow Diagram</h2>
-<img src="https://i.postimg.cc/rFRL6TPj/image.png"/>
+<img src="https://i.postimg.cc/9fN0bYm0/image.png"/>
 <h2>Proof of Implementation & Step-by-step deployment guide</h2>
 
 <p align="center">
