@@ -6,7 +6,7 @@ This repository contains the implementation and deployment artifacts for running
 <img src="https://i.postimg.cc/15NtHq2m/image.png"/>
 
 <h2>AWS VPC Architecture & Network Flow Diagram</h2>
-<img src="https://i.postimg.cc/9fN0bYm0/image.png"/>
+<img src="https://i.postimg.cc/rFRL6TPj/image.png"/>
 <h2>Proof of Implementation & Step-by-step deployment guide</h2>
 
 <p align="center">
